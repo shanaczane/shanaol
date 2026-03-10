@@ -24,6 +24,11 @@ const config: Config = {
         white:  '#e8f4ff',  // Body text
       },
 
+      // Grid layouts
+      gridTemplateColumns: {
+        hero: '3fr 2fr', // HeroSection: intro left (60%), ProfileCard right (40%)
+      },
+
       // Font
       fontFamily: {
         pixel:    ['var(--font-press-start)', 'monospace'],
