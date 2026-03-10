@@ -1,9 +1,6 @@
 @import "tailwindcss";
 @config "../tailwind.config.ts";
 
-/* ------------------------------------------------------------
-   Color Palette
-   ------------------------------------------------------------ */
 :root {
   --navy: #050d1a; /* Page background — deepest base */
   --deep: #0a1628; /* Card/widget background */
@@ -24,9 +21,6 @@
   --font-body: var(--font-nunito);
 }
 
-/* ------------------------------------------------------------
-   BASE RESET & BODY
-   ------------------------------------------------------------ */
 *,
 *::before,
 *::after {
@@ -47,22 +41,23 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
-  cursor: auto;
+  cursor: none;
 }
 
-/* ------------------------------------------------------------
-   STARFIELD BACKGROUND
-   ------------------------------------------------------------ */
-body::after {
-  content: "";
+/* Hide the native cursor everywhere — Cursor.tsx renders the custom dot */
+*,
+*::before,
+*::after {
+  cursor: none !important;
+}
+
+.starfield {
   position: fixed;
   inset: 0;
   z-index: -2;
   pointer-events: none;
 
-  /* Three star layers: tiny, small, medium — scattered via multiple radial-gradients */
   background-image:
-    /* Tiny stars */
     radial-gradient(
       1px 1px at 10% 15%,
       rgba(255, 255, 255, 0.8) 0%,
@@ -183,7 +178,6 @@ body::after {
       rgba(255, 255, 255, 0.6) 0%,
       transparent 100%
     ),
-    /* Small cyan-tinted stars */
     radial-gradient(
         1.5px 1.5px at 8% 28%,
         rgba(0, 229, 255, 0.5) 0%,
@@ -224,7 +218,6 @@ body::after {
       rgba(0, 229, 255, 0.55) 0%,
       transparent 100%
     ),
-    /* Medium bright stars */
     radial-gradient(
         2px 2px at 20% 40%,
         rgba(255, 255, 255, 0.9) 0%,
@@ -265,20 +258,6 @@ body::after {
   animation: starfield-twinkle 8s ease-in-out infinite alternate;
 }
 
-/* Deep navy base layer behind stars */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -3;
-  background: var(--navy);
-  pointer-events: none;
-}
-
-/* ------------------------------------------------------------
-   SCANLINES OVERLAY — subtle CRT effect
-   Applied via <div id="scanlines"> injected in layout.tsx
-   ------------------------------------------------------------ */
 #scanlines {
   position: fixed;
   inset: 0;
@@ -293,9 +272,6 @@ body::before {
   );
 }
 
-/* ------------------------------------------------------------
-   CUSTOM SCROLLBAR
-   ------------------------------------------------------------ */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -320,9 +296,6 @@ body::before {
   scrollbar-color: var(--bright) var(--deep);
 }
 
-/* ------------------------------------------------------------
-   TYPOGRAPHY DEFAULTS
-   ------------------------------------------------------------ */
 h1,
 h2,
 h3,
@@ -376,11 +349,6 @@ p {
     0 0 20px rgba(95, 255, 200, 0.4);
 }
 
-/* ------------------------------------------------------------
-   ANIMATIONS
-   ------------------------------------------------------------ */
-
-/* --- Starfield twinkle --- */
 @keyframes starfield-twinkle {
   0% {
     opacity: 0.85;
@@ -393,7 +361,6 @@ p {
   }
 }
 
-/* --- Float (profile card) --- */
 @keyframes float {
   0%,
   100% {
@@ -408,7 +375,6 @@ p {
   animation: float 4s ease-in-out infinite;
 }
 
-/* --- Spinning vinyl --- */
 @keyframes spin-vinyl {
   from {
     transform: rotate(0deg);
@@ -426,7 +392,6 @@ p {
   animation: spin-vinyl 8s linear infinite;
 }
 
-/* --- Equalizer bars --- */
 @keyframes eq-bar {
   0%,
   100% {
@@ -471,7 +436,6 @@ p {
   animation-delay: 0.25s;
 }
 
-/* --- Blinking border badge --- */
 @keyframes blink-border {
   0%,
   100% {
@@ -487,7 +451,21 @@ p {
   animation: blink-border 2.5s ease-in-out infinite;
 }
 
-/* --- Status dot pulse --- */
+@keyframes blink-border-yellow {
+  0%,
+  100% {
+    border-color: rgba(255, 229, 102, 0.4);
+  }
+  50% {
+    border-color: rgba(255, 229, 102, 0.9);
+    box-shadow: 0 0 10px rgba(255, 229, 102, 0.3);
+  }
+}
+
+.animate-blink-border-yellow {
+  animation: blink-border-yellow 2.5s ease-in-out infinite;
+}
+
 @keyframes status-pulse {
   0%,
   100% {
@@ -509,7 +487,6 @@ p {
   animation: status-pulse 2s ease-in-out infinite;
 }
 
-/* --- Ticker / marquee scroll --- */
 @keyframes ticker-scroll {
   0% {
     transform: translateX(0);
@@ -529,7 +506,6 @@ p {
   animation-play-state: paused;
 }
 
-/* --- Sparkle spawn --- */
 @keyframes sparkle-out {
   0% {
     opacity: 1;
@@ -550,7 +526,6 @@ p {
   user-select: none;
 }
 
-/* --- Page fade in --- */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -566,7 +541,6 @@ p {
   animation: fade-in 0.5s ease-out forwards;
 }
 
-/* --- Glow pulse (for borders, text) --- */
 @keyframes glow-pulse {
   0%,
   100% {
@@ -585,9 +559,6 @@ p {
   animation: glow-pulse 2s ease-in-out infinite;
 }
 
-/* ------------------------------------------------------------
-   WIDGET / CARD BASE STYLES
-   ------------------------------------------------------------ */
 .widget {
   background: var(--deep);
   border: 1px solid var(--blue);
@@ -625,9 +596,6 @@ p {
   opacity: 1;
 }
 
-/* ------------------------------------------------------------
-   MOOD TAG / BADGE PILLS
-   ------------------------------------------------------------ */
 .tag {
   display: inline-flex;
   align-items: center;
@@ -677,9 +645,6 @@ p {
   border-color: var(--blue);
 }
 
-/* ------------------------------------------------------------
-   PROGRESS BAR
-   ------------------------------------------------------------ */
 .progress-track {
   height: 4px;
   background: var(--blue);
@@ -694,10 +659,149 @@ p {
   transition: width 0.6s ease;
 }
 
-/* ------------------------------------------------------------
-   SELECTION COLOR
-   ------------------------------------------------------------ */
 ::selection {
   background: rgba(0, 229, 255, 0.25);
   color: var(--white);
+}
+
+.prose {
+  font-family: var(--font-body);
+  font-size:   1rem;
+  line-height: 1.8;
+  color:       var(--white);
+}
+
+.prose h2 {
+  font-family:   var(--font-pixel);
+  font-size:     0.65rem;
+  color:         var(--cyan);
+  text-shadow:   0 0 10px var(--cyan), 0 0 20px rgba(0,229,255,0.3);
+  line-height:   1.6;
+  margin-top:    2.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose h3 {
+  font-family:   var(--font-terminal);
+  font-size:     1.4rem;
+  color:         var(--glow);
+  letter-spacing: 0.04em;
+  margin-top:    2rem;
+  margin-bottom: 0.6rem;
+  text-shadow:   none;
+}
+
+.prose p {
+  font-family:   var(--font-body);
+  font-size:     1rem;
+  color:         var(--white);
+  opacity:       0.88;
+  margin-bottom: 1.25rem;
+  line-height:   1.8;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose strong {
+  color:       var(--glow);
+  font-weight: 700;
+}
+
+.prose em {
+  color:       var(--sky);
+  font-style:  italic;
+}
+
+.prose a {
+  color:           var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-family:     var(--font-body);
+  font-size:       1rem;
+}
+
+.prose a:hover {
+  color:       var(--glow);
+  text-shadow: 0 0 8px var(--glow);
+}
+
+.prose ul,
+.prose ol {
+  padding-left:  1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose li {
+  font-family:   var(--font-body);
+  font-size:     1rem;
+  color:         var(--white);
+  opacity:       0.88;
+  margin-bottom: 0.4rem;
+  line-height:   1.7;
+}
+
+.prose ul li::marker {
+  color: var(--cyan);
+}
+
+.prose ol li::marker {
+  color:       var(--sky);
+  font-family: var(--font-terminal);
+  font-size:   1.1rem;
+}
+
+.prose blockquote {
+  border-left:   3px solid var(--pink);
+  padding-left:  1rem;
+  margin:        1.5rem 0;
+  font-style:    italic;
+  color:         var(--sky);
+  opacity:       0.85;
+}
+
+.prose hr {
+  border:     none;
+  height:     1px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  margin:     2rem 0;
+}
+
+.prose code {
+  font-family:   var(--font-terminal);
+  font-size:     1rem;
+  color:         var(--mint);
+  background:    rgba(95,255,200,0.08);
+  border:        1px solid rgba(95,255,200,0.2);
+  border-radius: 4px;
+  padding:       0.1em 0.4em;
+}
+
+.prose pre {
+  background:    var(--deep);
+  border:        1px solid var(--blue);
+  border-radius: 8px;
+  padding:       1.25rem;
+  overflow-x:    auto;
+  margin-bottom: 1.5rem;
+}
+
+.prose pre code {
+  background: none;
+  border:     none;
+  padding:    0;
+  font-size:  0.95rem;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0);    }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX( 6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX( 4px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
 }
