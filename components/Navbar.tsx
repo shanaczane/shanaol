@@ -5,12 +5,12 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
-  { href: "/blog", label: "blog" },
-  { href: "/diary", label: "diary" },
-  { href: "/reviews", label: "reviews" },
-  { href: "/currently", label: "currently" },
-  { href: "/music", label: "music" },
-  { href: "/about", label: "about" },
+  { href: "/blog", label: "BLOG" },
+  { href: "/diary", label: "DIARY" },
+  { href: "/reviews", label: "REVIEWS" },
+  { href: "/currently", label: "CURRENTLY" },
+  { href: "/music", label: "MUSIC" },
+  { href: "/about", label: "ABOUT" },
 ];
 
 function LiveStatus() {
@@ -38,12 +38,10 @@ function LiveStatus() {
     <div className="flex items-center gap-2 shrink-0">
       <span className="status-dot" aria-hidden="true" />
       <span
-        className="animate-blink-border border rounded px-2 py-0.5 text-xs"
         style={{
           fontFamily: "var(--font-terminal)",
           color: "var(--mint)",
-          borderColor: "var(--blue)",
-          fontSize: "0.8rem",
+          fontSize: "1rem",
           letterSpacing: "0.06em",
           whiteSpace: "nowrap",
         }}
@@ -60,39 +58,39 @@ export default function Navbar() {
 
   // Close mobile menu on route change
   useEffect(() => {
-    setMenuOpen(false);
+    const id = setTimeout(() => setMenuOpen(false), 0)
+    return () => clearTimeout(id)
   }, [pathname]);
 
   return (
     <header
       className="sticky top-0 z-50 w-full"
       style={{
-        background: "var(--mid)",
-        borderBottom: "1px solid var(--blue)",
+        background: "linear-gradient(90deg, var(--deep), var(--mid), var(--deep))",
+        borderBottom: "2px solid var(--bright)",
+        boxShadow: "0 0 20px rgba(30,94,255,0.4), inset 0 -1px 0 var(--cyan)",
       }}
     >
       <nav
-        className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 gap-4"
+        className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3 gap-4"
         aria-label="Main navigation"
       >
-        {/* ── Logo ── */}
         <Link
           href="/"
           className="shrink-0 leading-none"
           style={{
             fontFamily: "var(--font-pixel)",
             color: "var(--cyan)",
-            fontSize: "clamp(0.6rem, 1.5vw, 0.85rem)",
+            fontSize: "clamp(0.75rem, 2vw, 1.1rem)",
             textShadow: "0 0 10px var(--cyan), 0 0 20px rgba(0,229,255,0.4)",
             letterSpacing: "0.04em",
             textDecoration: "none",
           }}
           aria-label="shanaol home"
         >
-          shanaol
+          ✦ shanaol
         </Link>
 
-        {/* ── Desktop nav links ── */}
         <ul className="hidden md:flex items-center gap-1 list-none" role="list">
           {NAV_LINKS.map(({ href, label }) => {
             const active = pathname === href || pathname.startsWith(href + "/");
@@ -138,17 +136,15 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* ── Right side: status + mobile toggle ── */}
         <div className="flex items-center gap-3">
           <LiveStatus />
 
-          {/* Hamburger — mobile only */}
           <button
             className="md:hidden flex flex-col justify-center gap-1.5 p-1"
             onClick={() => setMenuOpen((o) => !o)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            style={{ background: "none", border: "none", cursor: "pointer" }}
+            style={{ background: "none", border: "none" }}
           >
             <span
               className="block h-px w-5 transition-all duration-200"
@@ -177,7 +173,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* ── Mobile dropdown ── */}
       {menuOpen && (
         <ul
           className="md:hidden list-none px-4 pb-4 flex flex-col gap-1"
