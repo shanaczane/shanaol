@@ -1,0 +1,124 @@
+{
+  "reviews": [
+    {
+      "id":      "dead-by-daylight",
+      "title":   "Dead by Daylight",
+      "type":    "game",
+      "score":   10,
+      "cover":   "🛡️",
+      "status":  "playing",
+      "date":    "2026-03-01",
+      "excerpt": "The open world FROM always needed to build. Every corner hides something worth finding, and the lore rewards obsession. I have 300 hours and I still find new things."
+    },
+    {
+      "id":      "blue-protocol",
+      "title":   "Blue Protocol",
+      "type":    "game",
+      "score":   8,
+      "cover":   "🌀",
+      "status":  "in progress",
+      "date":    "2026-03-08",
+      "excerpt": "Gorgeous art style, combat that clicks once you stop fighting the camera. Character creator alone is worth the download."
+    },
+    {
+      "id":      "hollow-knight",
+      "title":   "Hollow Knight",
+      "type":    "game",
+      "score":   9.5,
+      "cover":   "🦋",
+      "status":  "completed",
+      "date":    "2026-01-20",
+      "excerpt": "A masterclass in atmosphere. Hallownest is one of the most fully realized worlds in gaming. The final boss nearly broke me."
+    },
+    {
+      "id":      "dungeon-meshi",
+      "title":   "Dungeon Meshi",
+      "type":    "anime",
+      "score":   9.5,
+      "cover":   "🍲",
+      "status":  "in progress",
+      "date":    "2026-03-07",
+      "excerpt": "Uses food as a lens for grief, survival, and what it means to be human. Studio Trigger is doing Miura's source material full justice."
+    },
+    {
+      "id":      "frieren",
+      "title":   "Frieren: Beyond Journey's End",
+      "type":    "anime",
+      "score":   9.5,
+      "cover":   "🌿",
+      "status":  "completed",
+      "date":    "2026-02-20",
+      "excerpt": "A meditation on time, memory, and what we leave behind. Quietly the best anime of the decade so far. Every episode hit differently."
+    },
+    {
+      "id":      "cyberpunk-edgerunners",
+      "title":   "Cyberpunk: Edgerunners",
+      "type":    "anime",
+      "score":   9,
+      "cover":   "⚡",
+      "status":  "completed",
+      "date":    "2026-01-05",
+      "excerpt": "10 episodes. Did more with the Night City setting than 100 hours of the game. David Martinez lives rent-free in my head."
+    },
+    {
+      "id":      "berserk",
+      "title":   "Berserk",
+      "type":    "manga",
+      "score":   10,
+      "cover":   "⚔️",
+      "status":  "in progress",
+      "date":    "2026-03-05",
+      "excerpt": "Thirty years in. Still the most ambitious dark fantasy ever committed to paper. Miura's legacy continues with Studio Gaga."
+    },
+    {
+      "id":      "vinland-saga",
+      "title":   "Vinland Saga",
+      "type":    "manga",
+      "score":   9,
+      "cover":   "⛵",
+      "status":  "in progress",
+      "date":    "2026-02-10",
+      "excerpt": "Started as a revenge story and became something far more profound. The Farm Arc is peak manga. Thorfinn's character arc is flawless."
+    },
+    {
+      "id":      "chainsaw-man",
+      "title":   "Chainsaw Man",
+      "type":    "manga",
+      "score":   9,
+      "cover":   "🩸",
+      "status":  "in progress",
+      "date":    "2026-01-28",
+      "excerpt": "Fujimoto does not care about your expectations. Part 2 went in a direction no one predicted and I respect it deeply."
+    },
+    {
+      "id":      "your-name",
+      "title":   "Your Name",
+      "type":    "movie",
+      "score":   9,
+      "cover":   "🌠",
+      "status":  "completed",
+      "date":    "2026-02-14",
+      "excerpt": "Rewatched for the third time. Still cried. The comet scene does something to me every single time without fail."
+    },
+    {
+      "id":      "spirited-away",
+      "title":   "Spirited Away",
+      "type":    "movie",
+      "score":   10,
+      "cover":   "🏮",
+      "status":  "completed",
+      "date":    "2026-01-15",
+      "excerpt": "The gold standard. Every frame is a painting. Every character unforgettable. Miyazaki at his absolute peak."
+    },
+    {
+      "id":      "the-boy-and-the-heron",
+      "title":   "The Boy and the Heron",
+      "type":    "movie",
+      "score":   8.5,
+      "cover":   "🦢",
+      "status":  "completed",
+      "date":    "2026-02-01",
+      "excerpt": "Dense and personal in a way that demands multiple watches. Miyazaki making something for himself and trusting the audience to keep up."
+    }
+  ]
+}

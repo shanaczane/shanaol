@@ -1,0 +1,107 @@
+{
+  "current": {
+    "title":  "Idol",
+    "artist": "YOASOBI",
+    "genre":  "J-Pop",
+    "album":  "THE BOOK 3",
+    "note":   "been on repeat for two weeks straight. the production is immaculate and the dual vocal performance is genuinely unreal."
+  },
+
+  "playlists": [
+    {
+      "id":          "late-night",
+      "name":        "late night mode",
+      "emoji":       "🌙",
+      "accent":      "var(--sky)",
+      "description": "lo-fi, ambient, slow electronic. for 3am when the world has finally gone quiet and your brain won't stop.",
+      "vibes":       ["lo-fi", "ambient", "chill"],
+      "tracks": [
+        "Snowfall — Øneheart & reidenshi",
+        "Clair de Lune — Claude Debussy",
+        "Aqueous Transmission — Incubus",
+        "Weightless — Marconi Union"
+      ]
+    },
+    {
+      "id":          "boss-fight",
+      "name":        "boss fight energy",
+      "emoji":       "⚡",
+      "accent":      "var(--cyan)",
+      "description": "full send. for gaming sessions, creative sprints, or just when you need to feel completely invincible.",
+      "vibes":       ["hype", "electronic", "intense"],
+      "tracks": [
+        "Unravel — TK from Ling Tosite Sigure",
+        "My War — Shingeki no Kyojin",
+        "Libera Me From Hell — Gurren Lagann OST",
+        "THE HERO!! — Jam Project"
+      ]
+    },
+    {
+      "id":          "cozy-morning",
+      "name":        "cozy morning",
+      "emoji":       "☕",
+      "accent":      "var(--yellow)",
+      "description": "soft, warm, light. coffee not optional. good for slow starts, reading, and pretending you're in a café.",
+      "vibes":       ["cozy", "acoustic", "j-pop"],
+      "tracks": [
+        "Plastic Love — Mariya Takeuchi",
+        "Sunny Side Up — Fujii Kaze",
+        "Natsu no Hi — Mondo Grosso",
+        "Ride — Twenty One Pilots"
+      ]
+    },
+    {
+      "id":          "emotional-damage",
+      "name":        "emotional damage",
+      "emoji":       "💧",
+      "accent":      "var(--pink)",
+      "description": "OSTs and sad bangers. for when you want to feel something very deeply. you have been warned.",
+      "vibes":       ["ost", "emotional", "cinematic"],
+      "tracks": [
+        "Merry-Go-Round of Life — Joe Hisaishi",
+        "A Cruel Angel's Thesis — Yoko Takahashi",
+        "Bless Your Breath — Kenshi Yonezu",
+        "Zenzenzense — RADWIMPS"
+      ]
+    }
+  ],
+
+  "writeups": [
+    {
+      "id":     "yoasobi",
+      "name":   "YOASOBI",
+      "type":   "artist",
+      "cover":  "🌙",
+      "accent": "var(--pink)",
+      "genres": ["J-Pop", "Electropop", "Anisong"],
+      "blurb":  "Literature-to-music adaptations done with surgical precision. Ikura's vocals are technically flawless and emotionally devastating in equal measure. Ayase's production makes every song feel like a controlled collapse — it shouldn't work as well as it does."
+    },
+    {
+      "id":     "joe-hisaishi",
+      "name":   "Joe Hisaishi",
+      "type":   "artist",
+      "cover":  "🎹",
+      "accent": "var(--sky)",
+      "genres": ["Orchestral", "Neoclassical", "Soundtrack"],
+      "blurb":  "The reason I can't watch Ghibli films without crying. My Neighbor Totoro alone would cement his legacy forever. Merry-Go-Round of Life is one of the most perfect pieces of music ever written and I will not be taking questions."
+    },
+    {
+      "id":     "kenshi-yonezu",
+      "name":   "Kenshi Yonezu",
+      "type":   "artist",
+      "cover":  "🦋",
+      "accent": "var(--cyan)",
+      "genres": ["J-Pop", "Alternative", "Anisong"],
+      "blurb":  "Ghost of his HACHI era but in the best possible way — mainstream without losing the weirdness. Lemon is a masterclass in pop songwriting. Kick Back made me watch Chainsaw Man twice just to hear it in context."
+    },
+    {
+      "id":     "nier-ost",
+      "name":   "NieR:Automata OST",
+      "type":   "album",
+      "cover":  "⚙️",
+      "accent": "var(--mint)",
+      "genres": ["Game OST", "Orchestral", "Choral"],
+      "blurb":  "Keiichi Okabe composed an entire emotional journey disguised as a game soundtrack. Weight of the World hits different once you understand what it's actually saying. The full choir version is a religious experience regardless of whether you've played the game."
+    }
+  ]
+}

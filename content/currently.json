@@ -1,0 +1,8 @@
+{
+  "game":  { "title": "Blue Protocol",  "sub": "MMORPG · 48hrs",   "progress": 65 },
+  "anime": { "title": "Dungeon Meshi",  "sub": "EP 18 / 24",       "progress": 75 },
+  "manga": { "title": "Berserk",        "sub": "Ch. 374",           "progress": 99 },
+  "music": { "title": "Idol",           "artist": "YOASOBI",        "genre": "J-Pop" },
+  "movie": { "title": "Your Name",      "sub": "Rewatch",           "progress": 40 },
+  "mood":  "Cozy but chaotic"
+}
