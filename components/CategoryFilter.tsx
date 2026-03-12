@@ -83,7 +83,13 @@ export default function CategoryFilter({ posts }: { posts: BlogPost[] }) {
           no posts here yet...
         </p>
       ) : (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+        <div
+          style={{
+            display:             'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap:                 '1.25rem',
+          }}
+        >
           {filtered.map((post) => (
             <BlogCard key={post.slug} post={post} />
           ))}
