@@ -275,7 +275,13 @@ export default function CurrentlyPage() {
         />
       </header>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <div
+        style={{
+          display:             'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap:                 '1rem',
+        }}
+      >
         {items.map((item) => (
           <StatusItem key={item.label + item.title} {...item} />
         ))}

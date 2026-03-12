@@ -119,151 +119,108 @@ export default function DiaryPage() {
           nothing here yet...
         </p>
       ) : (
-        <ol
-          style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0' }}
+        <div
+          style={{
+            display:             'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap:                 '1.25rem',
+          }}
           aria-label="Diary entries"
         >
-          {entries.map((entry, i) => {
+          {entries.map((entry) => {
             const { slug, frontmatter: fm, content } = entry
             const preview = fm.locked
               ? '🔒 this entry is private.'
               : getPreview(content)
-            const isLast  = i === entries.length - 1
 
             return (
-              <li
+              <Link
                 key={slug}
-                style={{
-                  display:       'flex',
-                  gap:           '1rem',
-                  position:      'relative',
-                  paddingBottom: isLast ? 0 : '2rem',
-                }}
+                href={`/diary/${slug}`}
+                style={{ textDecoration: 'none', display: 'flex', height: '100%' }}
               >
-                <div
+                <article
+                  className="widget"
                   style={{
+                    borderLeft:    '3px solid var(--pink)',
+                    borderRadius:  '8px',
+                    paddingLeft:   '1.1rem',
                     display:       'flex',
                     flexDirection: 'column',
-                    alignItems:    'center',
-                    flexShrink:    0,
-                    width:         '20px',
+                    width:         '100%',
                   }}
                 >
                   <div
                     style={{
-                      fontSize:   '1.25rem',
-                      lineHeight: 1,
-                      marginTop:  '0.15rem',
-                      flexShrink: 0,
-                      filter:     'drop-shadow(0 0 6px rgba(255,110,180,0.5))',
-                    }}
-                    aria-hidden="true"
-                  >
-                    {fm.mood}
-                  </div>
-
-                  {!isLast && (
-                    <div
-                      aria-hidden="true"
-                      style={{
-                        flex:       1,
-                        width:      '1px',
-                        background: 'linear-gradient(to bottom, var(--pink), transparent)',
-                        opacity:    0.3,
-                        marginTop:  '0.5rem',
-                      }}
-                    />
-                  )}
-                </div>
-
-                <div
-                  style={{
-                    flex:        1,
-                    minWidth:    0,
-                    borderLeft:  '2px solid var(--pink)',
-                    paddingLeft: '1rem',
-                    paddingTop:  '0.1rem',
-                  }}
-                >
-                  <div
-                    style={{
-                      display:      'flex',
-                      alignItems:   'baseline',
-                      gap:          '0.6rem',
-                      marginBottom: '0.4rem',
-                      flexWrap:     'wrap',
+                      display:        'flex',
+                      alignItems:     'center',
+                      justifyContent: 'space-between',
+                      gap:            '0.5rem',
+                      marginBottom:   '0.6rem',
                     }}
                   >
+                    <span style={{ fontSize: '1.2rem' }} aria-hidden="true">{fm.mood}</span>
                     <time
                       dateTime={fm.date}
                       style={{
                         fontFamily:    'var(--font-terminal)',
-                        fontSize:      '1.15rem',
-                        color:         'var(--pink)',
-                        letterSpacing: '0.06em',
+                        fontSize:      '0.9rem',
+                        color:         'var(--sky)',
+                        opacity:       0.7,
+                        flexShrink:    0,
+                        letterSpacing: '0.04em',
                       }}
                     >
                       {formatShortDate(fm.date)}
                     </time>
+                  </div>
 
-                    {fm.moodLabel && !fm.locked && (
-                      <span
-                        style={{
-                          fontFamily:    'var(--font-terminal)',
-                          fontSize:      '1rem',
-                          color:         'var(--pink)',
-                          opacity:       0.5,
-                          letterSpacing: '0.04em',
-                        }}
-                      >
-                        · {fm.moodLabel}
-                      </span>
-                    )}
-
-                    <span
+                  {fm.moodLabel && !fm.locked && (
+                    <p
                       style={{
                         fontFamily:    'var(--font-terminal)',
-                        fontSize:      '0.9rem',
-                        color:         'var(--sky)',
-                        opacity:       0.45,
-                        letterSpacing: '0.03em',
-                        marginLeft:    'auto',
+                        fontSize:      '0.85rem',
+                        color:         'var(--pink)',
+                        opacity:       0.6,
+                        letterSpacing: '0.04em',
+                        marginBottom:  '0.4rem',
                       }}
                     >
-                      {formatDate(fm.date).split(',')[1]?.trim()}
-                    </span>
-                  </div>
+                      {fm.moodLabel}
+                    </p>
+                  )}
 
                   <p
                     style={{
                       fontFamily: 'var(--font-body)',
-                      fontSize:   '0.95rem',
+                      fontSize:   '0.9rem',
                       color:      'var(--white)',
                       opacity:    0.75,
-                      lineHeight: 1.7,
-                      marginBottom: '0.6rem',
+                      lineHeight: 1.6,
+                      flexGrow:   1,
                     }}
                   >
                     {preview}
                   </p>
 
-                  <Link
-                    href={`/diary/${slug}`}
+                  <p
                     style={{
                       fontFamily:    'var(--font-terminal)',
                       fontSize:      '1rem',
                       color:         'var(--pink)',
+                      marginTop:     'auto',
+                      paddingTop:    '0.75rem',
                       letterSpacing: '0.05em',
-                      opacity:       0.7,
+                      opacity:       0.8,
                     }}
                   >
                     → read entry
-                  </Link>
-                </div>
-              </li>
+                  </p>
+                </article>
+              </Link>
             )
           })}
-        </ol>
+        </div>
       )}
     </main>
   )
