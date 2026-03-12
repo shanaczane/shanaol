@@ -78,6 +78,7 @@ export default function Navbar() {
         <Link
           href="/"
           className="shrink-0 leading-none"
+          aria-label="shanaol home"
           style={{
             fontFamily: "var(--font-pixel)",
             color: "var(--cyan)",
@@ -85,10 +86,22 @@ export default function Navbar() {
             textShadow: "0 0 10px var(--cyan), 0 0 20px rgba(0,229,255,0.4)",
             letterSpacing: "0.04em",
             textDecoration: "none",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.4rem",
           }}
-          aria-label="shanaol home"
         >
-          ✦ shanaol
+          <span
+            aria-hidden="true"
+            style={{
+              display:    "inline-block",
+              lineHeight: 1,
+              marginTop:  "-0.1em",
+            }}
+          >
+            ✦
+          </span>
+          shanaol
         </Link>
 
         <ul className="hidden md:flex items-center gap-1 list-none" role="list">
