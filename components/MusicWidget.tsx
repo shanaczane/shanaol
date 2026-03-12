@@ -108,10 +108,10 @@ export default function MusicWidget() {
 
   return (
     <Widget title="music vibe" accent="var(--cyan)" as="section">
-      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', textAlign: 'center' }}>
         <Vinyl />
 
-        <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ minWidth: 0, width: '100%' }}>
           <p
             style={{
               fontFamily:    'var(--font-terminal)',
@@ -153,13 +153,25 @@ export default function MusicWidget() {
             {music.artist}
           </p>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem' }}>
             <span className="tag tag-music" style={{ fontSize: '0.8rem' }}>
               {music.genre}
             </span>
             <Equalizer />
           </div>
         </div>
+
+        <p
+          style={{
+            fontFamily:  'var(--font-body)',
+            fontSize:    '0.85rem',
+            color:       'var(--sky)',
+            opacity:     0.5,
+            fontStyle:   'italic',
+          }}
+        >
+          currently obsessing over j-pop &amp; anime OSTs
+        </p>
       </div>
     </Widget>
   )
