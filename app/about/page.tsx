@@ -42,7 +42,7 @@ const FUN_FACTS: { label: string; value: string; accent: string }[] = [
 
 export default function AboutPage() {
   return (
-    <main className={`${SECTION} py-12`}>
+    <main className={`${SECTION} py-12`} style={{ paddingLeft: '4rem', paddingRight: '4rem' }}>
 
       <header style={{ marginBottom: '2.5rem' }}>
         <p

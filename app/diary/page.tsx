@@ -51,8 +51,10 @@ export default function DiaryPage() {
 
   return (
     <main
-      className="mx-auto w-full max-w-7xl px-8"
+      className="mx-auto w-full max-w-7xl"
       style={{
+        paddingLeft:   '4rem',
+        paddingRight:  '4rem',
         paddingTop:    '3rem',
         paddingBottom: '5rem',
       }}

@@ -21,7 +21,7 @@ export default function BlogPage() {
   const posts = getAllBlogPosts()
 
   return (
-    <main className={`${SECTION} py-12`}>
+    <main className={`${SECTION} py-12`} style={{ paddingLeft: '4rem', paddingRight: '4rem' }}>
       <header style={{ marginBottom: '2.5rem' }}>
         <p
           style={{
