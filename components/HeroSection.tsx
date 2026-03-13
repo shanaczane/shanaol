@@ -11,7 +11,7 @@ const CTA_LINKS = [
 export default function HeroSection() {
   return (
     <section
-      className="mx-auto w-full max-w-7xl px-8 py-12 md:py-16 animate-fade-in"
+      className="mx-auto w-full max-w-7xl px-20 py-12 md:py-16 animate-fade-in"
       aria-label="Introduction"
     >
       <div className="grid grid-cols-1 md:grid-cols-hero gap-10 items-center">
@@ -155,7 +155,9 @@ export default function HeroSection() {
           />
         </div>
 
-        <ProfileCard />
+        <div style={{ position: 'sticky', top: '5rem', paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
+          <ProfileCard />
+        </div>
       </div>
     </section>
   )
