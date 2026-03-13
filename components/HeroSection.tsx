@@ -11,7 +11,8 @@ const CTA_LINKS = [
 export default function HeroSection() {
   return (
     <section
-      className="mx-auto w-full max-w-7xl px-20 py-12 md:py-16 animate-fade-in"
+      className="mx-auto w-full max-w-7xl animate-fade-in"
+      style={{ paddingLeft: '4rem', paddingRight: '4rem', paddingTop: '3rem', paddingBottom: '4rem' }}
       aria-label="Introduction"
     >
       <div className="grid grid-cols-1 md:grid-cols-hero gap-10 items-center">
