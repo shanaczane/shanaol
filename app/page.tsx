@@ -1,3 +1,4 @@
+import type React from 'react'
 import Ticker          from '@/components/Ticker'
 import HeroSection     from '@/components/HeroSection'
 import CurrentlyWidget from '@/components/CurrentlyWidget'
@@ -21,7 +22,8 @@ export const metadata = {
   },
 }
 
-const SECTION = 'mx-auto w-full max-w-7xl px-8'
+const SECTION = 'mx-auto w-full max-w-7xl'
+const SECTION_PAD: React.CSSProperties = { paddingLeft: '4rem', paddingRight: '4rem' }
 
 const CATEGORY_TAG: Record<string, string> = {
   gaming: 'tag-gaming',
@@ -370,6 +372,7 @@ export default function HomePage() {
         aria-hidden="true"
         className={SECTION}
         style={{
+          ...SECTION_PAD,
           height:       '1px',
           background:   'linear-gradient(90deg, transparent, var(--blue), transparent)',
           marginBottom: '2.5rem',
@@ -378,7 +381,7 @@ export default function HomePage() {
 
       <section
         className={SECTION}
-        style={{ paddingBottom: '2.5rem' }}
+        style={{ ...SECTION_PAD, paddingBottom: '2.5rem' }}
         aria-label="Currently, music, and site updates"
       >
         <div
@@ -391,9 +394,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      <div aria-hidden="true" className={SECTION} style={{ ...SECTION_PAD, height: '1px', background: 'linear-gradient(90deg, transparent, var(--blue), transparent)', marginBottom: '2.5rem' }} />
+
       <section
         className={SECTION}
-        style={{ paddingTop: '2.5rem', paddingBottom: '2.5rem', borderTop: '1px solid var(--blue)' }}
+        style={{ ...SECTION_PAD, paddingBottom: '2.5rem' }}
         aria-label="Latest posts and diary"
       >
         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '1.25rem' }}>
@@ -402,9 +407,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      <div aria-hidden="true" className={SECTION} style={{ ...SECTION_PAD, height: '1px', background: 'linear-gradient(90deg, transparent, var(--blue), transparent)', marginBottom: '2.5rem' }} />
+
       <section
         className={SECTION}
-        style={{ paddingTop: '2.5rem', paddingBottom: '5rem', borderTop: '1px solid var(--blue)' }}
+        style={{ ...SECTION_PAD, paddingBottom: '5rem' }}
         aria-label="Recent reviews and navigation"
       >
         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '1.25rem' }}>
