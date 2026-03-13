@@ -1,12 +1,11 @@
 import currently from '@/content/currently.json'
 import Widget from '@/components/Widget'
+import Image from 'next/image'
 
 const TAGS = [
   { label: 'gamer',      className: 'tag tag-gaming' },
   { label: 'weeb',       className: 'tag tag-anime'  },
   { label: 'manga head', className: 'tag tag-manga'  },
-  { label: 'OST lover',  className: 'tag tag-music'  },
-  { label: 'chaotic',    className: 'tag tag-random' },
 ]
 
 const STATS = [
@@ -21,7 +20,7 @@ export default function ProfileCard() {
     <Widget
       className="animate-float"
       style={{
-        maxWidth:  '420px',
+        maxWidth:  '360px',
         width:     '100%',
         margin:    '0 auto',
         border:    '2px solid var(--bright)',
@@ -44,20 +43,18 @@ export default function ProfileCard() {
       <div className="flex flex-col items-center gap-3 mb-5">
         <div
           style={{
+            marginTop:    '0.5rem',
             width:        '80px',
             height:       '80px',
             borderRadius: '4px',
-            background:   'linear-gradient(135deg, var(--mid), var(--blue))',
             border:       '3px solid var(--cyan)',
             boxShadow:    '0 0 15px rgba(0,229,255,0.4)',
-            display:      'flex',
-            alignItems:   'center',
-            justifyContent: 'center',
-            fontSize:     '2.2rem',
+            overflow:     'hidden',
+            flexShrink:   0,
           }}
           aria-hidden="true"
         >
-          🌙
+          <Image src="/image.jpg" alt="Shana" width={80} height={80} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
         </div>
 
         <div className="text-center">
