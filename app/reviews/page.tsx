@@ -15,13 +15,13 @@ export const metadata = {
   },
 }
 
-const SECTION = 'mx-auto w-full max-w-7xl px-8'
+const SECTION = 'w-full'
 
 export default function ReviewsPage() {
   const reviews = getAllReviews()
 
   return (
-    <main className={`${SECTION} py-12`} style={{ paddingLeft: '4rem', paddingRight: '4rem' }}>
+    <main className={`${SECTION} py-12`} style={{ paddingLeft: '4rem', paddingRight: '4rem', paddingTop: '5rem', paddingBottom: '5rem' }}>
       <header style={{ marginBottom: '2.5rem' }}>
         <p
           style={{

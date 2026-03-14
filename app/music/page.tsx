@@ -14,7 +14,7 @@ export const metadata = {
   },
 }
 
-const SECTION = 'mx-auto w-full max-w-7xl px-8'
+const SECTION = 'w-full'
 
 type Playlist = {
   id:          string
@@ -354,7 +354,7 @@ export default function MusicPage() {
   }
 
   return (
-    <main className={`${SECTION} py-12`} style={{ paddingLeft: '4rem', paddingRight: '4rem' }}>
+    <main className={`${SECTION} py-12`} style={{ paddingLeft: '4rem', paddingRight: '4rem', paddingTop: '5rem', paddingBottom: '5rem' }}>
 
       <header style={{ marginBottom: '2.5rem' }}>
         <p
@@ -487,12 +487,12 @@ export default function MusicPage() {
         <p
           style={{
             fontFamily:    'var(--font-terminal)',
-            fontSize:      '0.85rem',
-            color:         'var(--sky)',
+            fontSize:      '1.2rem',
+            color:         'var(--cyan)',
             letterSpacing: '0.1em',
-            opacity:       0.55,
             marginBottom:  '1rem',
             textTransform: 'uppercase',
+            textShadow:    '0 0 8px rgba(0,229,255,0.35)',
           }}
         >
           mood playlists
@@ -517,12 +517,12 @@ export default function MusicPage() {
         <p
           style={{
             fontFamily:    'var(--font-terminal)',
-            fontSize:      '0.85rem',
-            color:         'var(--sky)',
+            fontSize:      '1.2rem',
+            color:         'var(--pink)',
             letterSpacing: '0.1em',
-            opacity:       0.55,
             marginBottom:  '1rem',
             textTransform: 'uppercase',
+            textShadow:    '0 0 8px rgba(255,110,180,0.35)',
           }}
         >
           artists & albums worth talking about

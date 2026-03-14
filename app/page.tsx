@@ -22,7 +22,7 @@ export const metadata = {
   },
 }
 
-const SECTION = 'mx-auto w-full max-w-7xl'
+const SECTION = 'w-full'
 const SECTION_PAD: React.CSSProperties = { paddingLeft: '4rem', paddingRight: '4rem' }
 
 const CATEGORY_TAG: Record<string, string> = {
@@ -399,11 +399,11 @@ export default function HomePage() {
       <section
         className={SECTION}
         style={{ ...SECTION_PAD, paddingBottom: '2.5rem' }}
-        aria-label="Latest posts and diary"
+        aria-label="Latest posts and explore"
       >
         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '1.25rem' }}>
           <LatestPosts />
-          <DiaryPreview />
+          <NavShortcuts />
         </div>
       </section>
 
@@ -412,11 +412,11 @@ export default function HomePage() {
       <section
         className={SECTION}
         style={{ ...SECTION_PAD, paddingBottom: '5rem' }}
-        aria-label="Recent reviews and navigation"
+        aria-label="Recent reviews and diary"
       >
         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '1.25rem' }}>
           <RecentReviewsPlaceholder />
-          <NavShortcuts />
+          <DiaryPreview />
         </div>
       </section>
     </main>

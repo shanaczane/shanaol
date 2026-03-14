@@ -12,7 +12,7 @@ export const metadata = {
   },
 }
 
-const SECTION = 'mx-auto w-full max-w-7xl px-8'
+const SECTION = 'w-full'
 
 const INTERESTS = [
   { label: 'Gaming',    className: 'tag tag-gaming'  },
@@ -42,7 +42,7 @@ const FUN_FACTS: { label: string; value: string; accent: string }[] = [
 
 export default function AboutPage() {
   return (
-    <main className={`${SECTION} py-12`} style={{ paddingLeft: '4rem', paddingRight: '4rem' }}>
+    <main className={`${SECTION} py-12`} style={{ paddingLeft: '4rem', paddingRight: '4rem', paddingTop: '5rem', paddingBottom: '5rem' }}>
 
       <header style={{ marginBottom: '2.5rem' }}>
         <p
@@ -197,9 +197,9 @@ export default function AboutPage() {
           <p
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize:   '1rem',
+              fontSize:   '1.05rem',
               color:      'var(--white)',
-              opacity:    0.8,
+              opacity:    0.92,
               lineHeight: 1.8,
               marginBottom: '0.85rem',
             }}
@@ -212,9 +212,9 @@ export default function AboutPage() {
           <p
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize:   '1rem',
+              fontSize:   '1.05rem',
               color:      'var(--white)',
-              opacity:    0.8,
+              opacity:    0.92,
               lineHeight: 1.8,
               marginBottom: '0.85rem',
             }}
@@ -227,9 +227,9 @@ export default function AboutPage() {
           <p
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize:   '1rem',
+              fontSize:   '1.05rem',
               color:      'var(--white)',
-              opacity:    0.8,
+              opacity:    0.92,
               lineHeight: 1.8,
             }}
           >

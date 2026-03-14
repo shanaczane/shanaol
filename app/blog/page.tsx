@@ -1,7 +1,7 @@
 import { getAllBlogPosts } from '@/lib/posts'
 import CategoryFilter     from '@/components/CategoryFilter'
 
-const SECTION = 'mx-auto w-full max-w-7xl px-8'
+const SECTION = 'w-full'
 
 export const metadata = {
   title:       'blog',
@@ -21,7 +21,7 @@ export default function BlogPage() {
   const posts = getAllBlogPosts()
 
   return (
-    <main className={`${SECTION} py-12`} style={{ paddingLeft: '4rem', paddingRight: '4rem' }}>
+    <main className={`${SECTION} py-12`} style={{ paddingLeft: '4rem', paddingRight: '4rem', paddingTop: '5rem', paddingBottom: '5rem' }}>
       <header style={{ marginBottom: '2.5rem' }}>
         <p
           style={{
