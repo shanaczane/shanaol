@@ -72,7 +72,8 @@ export default function Navbar() {
       }}
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3 gap-4"
+        className="flex w-full items-center justify-between py-3 gap-4"
+        style={{ paddingLeft: '4rem', paddingRight: '4rem' }}
         aria-label="Main navigation"
       >
         <Link
@@ -104,7 +105,7 @@ export default function Navbar() {
           shanaol
         </Link>
 
-        <ul className="hidden md:flex items-center gap-1 list-none" role="list">
+        <ul className="hidden md:flex flex-1 items-center justify-center gap-1 list-none" role="list">
           {NAV_LINKS.map(({ href, label }) => {
             const active = pathname === href || pathname.startsWith(href + "/");
             return (
