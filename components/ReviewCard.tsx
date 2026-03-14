@@ -21,6 +21,7 @@ const STATUS_ACCENT: Record<string, string> = {
   'in progress': 'var(--sky)',
   'dropped':     'var(--pink)',
   'on hold':     'var(--yellow)',
+  'idle':        'var(--glow)',
 }
 
 // ─── Score bar ───────────────────────────────────────────────
