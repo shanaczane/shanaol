@@ -381,7 +381,7 @@ export default function HomePage() {
 
       <section
         className={SECTION}
-        style={{ ...SECTION_PAD, paddingBottom: '2.5rem' }}
+        style={{ ...SECTION_PAD, paddingTop: '3rem', paddingBottom: '2.5rem' }}
         aria-label="Currently, music, and site updates"
       >
         <div
